@@ -1,6 +1,5 @@
 <h1>ExpNo 2 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name: DIVYA.K </h3>
-<h3>Register Number : 212222230035 </h3>
+
 <H3>Aim:</H3>
 <p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -54,11 +53,12 @@ Now, the Stack becomes empty, which means we have visited all the nodes, and our
  <li>If Not Visited, add it to the STACK. Else Call The Function Again Until No more nodes needs to be visited.</li>
 </ol></B>
 
-### Program:
 ```
-NAME      :Berjin Shabeck.H
-REG NO.   : 212222240018
+ NAME : Ashwin Kumar.S
+ REG NO : 212222240013
 ```
+
+## program:
 ```
 from collections import defaultdict
 def dfs(graph,start,visited,path):
@@ -82,6 +82,7 @@ path=[]
 traversedpath=dfs(graph,start,visited,path)
 print(traversedpath)
 ```
+
 <hr>
 <h3>Sample Input</h3>
 <hr>
@@ -102,6 +103,30 @@ F H <BR>
 
 <hr>
 
+## program:
+```
+from collections import defaultdict
+def dfs(g,s,vi,p):
+    p.append(s)
+    vi[s]=True
+    for ne in g[s]:
+        if vi[ne]==False:
+             dfs(g,ne,vi,p)
+             vi[ne]=True
+    return p
+g=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    g[u].append(v)
+    g[v].append(u)
+st=input()
+vi=defaultdict(bool)
+p=[]
+tdp=dfs(g,st,vi,p)
+print(tdp)
+```
+
 <hr>
 <h3>Sample Input</h3>
 <hr>
@@ -116,18 +141,8 @@ F H <BR>
 <hr>
 ['0', '1', '2', '3', '4']
 
-### OUTPUT:
-
-INPUT:
-
-![WhatsApp Image 2024-02-25 at 22 54 22_90e4af5f](https://github.com/niraunjana/19AI405ExpNo2/assets/119395610/395dd990-7619-4dd5-827d-eceb27b1b6e6)
-
-OUTPUT:
-
-![WhatsApp Image 2024-02-25 at 22 54 52_27ff2aec](https://github.com/niraunjana/19AI405ExpNo2/assets/119395610/9d75c7fd-be1e-48f5-aad2-a9c2705743f3)
-
-
 <hr>
 <h3>Result:</h3>
 <hr>
 <p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
+
